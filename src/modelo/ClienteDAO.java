@@ -29,13 +29,13 @@ public class ClienteDAO {
             ps.execute();
             return true;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            System.out.println(e.toString());
             return false;
         } finally {
             try {
                 con.close();
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e.toString());
+                System.out.println(e.toString());
             }
         }
     }
@@ -58,7 +58,6 @@ public class ClienteDAO {
                 listCl.add(cl);
             }
         } catch (SQLException e) {
-            //JOptionPane.showMessageDialog(null, e.toString());
             System.out.println(e.toString());
         }
         return listCl;
@@ -79,7 +78,6 @@ public class ClienteDAO {
             try {
                 con.close();
             } catch (SQLException e) {
-                //JOptionPane.showMessageDialog(null, e.toString());
                 System.out.println(e.toString());
             }
         }

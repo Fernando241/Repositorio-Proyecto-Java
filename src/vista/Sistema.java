@@ -1174,6 +1174,7 @@ public class Sistema extends javax.swing.JFrame {
     public javax.swing.JTextField txtTelefonoCliente;
     public javax.swing.JTextField txtTelefonoProveedor;
     // End of variables declaration//GEN-END:variables
+    
     private void limpiarCliente(){
         txtIdCliente.setText(null);
         txtDniCliente.setText(null);
