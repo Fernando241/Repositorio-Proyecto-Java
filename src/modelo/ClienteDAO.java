@@ -58,8 +58,30 @@ public class ClienteDAO {
                 listCl.add(cl);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            //JOptionPane.showMessageDialog(null, e.toString());
+            System.out.println(e.toString());
         }
         return listCl;
+    }
+    
+    public boolean eliminarCliente(int id){
+        String sql = "delete from clientes where id = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            //JOptionPane.showMessageDialog(null, e.toString());
+            System.out.println(e.toString());
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                //JOptionPane.showMessageDialog(null, e.toString());
+                System.out.println(e.toString());
+            }
+        }
     }
 }
